@@ -2,7 +2,7 @@
   Developer test
 </h1>
 
-<textarea [(ngModel)]="inputText">
+<textarea [(ngModel)]="inputText" (ngModelChange)="calculateStats()">
 
 </textarea>
 <br>
@@ -12,4 +12,5 @@ Number of lines: {{nbLines}}<br>
 Number of characters (total): {{nbChar}}<br>
 Number of letters: {{nbLetters}}<br>
 Number of digits: {{nbDigits}}<br>
-Number of other characters: {{nbChar - (nbLetters + nbDigits)}}
+Number of other characters: {{nbChar - (nbLetters + nbDigits)}}<br>
+Word Count: {{nbWords}}

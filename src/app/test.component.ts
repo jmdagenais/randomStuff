@@ -26,5 +26,13 @@ export class DevTestComponent {
 
     let onlyDigits: string = this.inputText.replace(/\D/g, '');
     this.nbDigits = onlyDigits.length;
+
+    this.nbWords = this.inputText.split(' ')
+      .filter((word) => word.length > 0)
+      .length;
+  }
+
+  onChanges() {
+    this.calculateStats();
   }
 }
