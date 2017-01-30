@@ -1,0 +1,15 @@
+<h1>
+  Developer test
+</h1>
+
+<textarea [(ngModel)]="inputText">
+
+</textarea>
+<br>
+<button (click)="calculateStats()">Calculate stats</button>
+<hr>
+Number of lines: {{nbLines}}<br>
+Number of characters (total): {{nbChar}}<br>
+Number of letters: {{nbLetters}}<br>
+Number of digits: {{nbDigits}}<br>
+Number of other characters: {{nbChar - (nbLetters + nbDigits)}}

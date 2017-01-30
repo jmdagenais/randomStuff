@@ -1,2 +1,2 @@
 export {environment} from './environment';
-export {HelixAppComponent} from './helix.component';
+export {DevTestComponent} from './test.component';

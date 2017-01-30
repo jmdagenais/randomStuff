@@ -1,9 +1,9 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
-import { HelixAppComponent, environment } from './app/';
+import { DevTestComponent, environment } from './app/';
 
 if (environment.production) {
   enableProdMode();
 }
 
-bootstrap(HelixAppComponent);
+bootstrap(DevTestComponent);
