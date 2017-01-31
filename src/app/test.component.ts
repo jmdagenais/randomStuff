@@ -16,7 +16,7 @@ export class DevTestComponent {
   nbWords: number = 0;
 
   calculateStats() {
-    this.nbLines = this.inputText.split('\n').length;
+    this.nbLines = this.inputText.split('/\r|\r\n|\n/').length;
 
     this.nbChar = this.inputText.length;
 
@@ -27,9 +27,10 @@ export class DevTestComponent {
     let onlyDigits: string = this.inputText.replace(/\D/g, '');
     this.nbDigits = onlyDigits.length;
 
-    this.nbWords = this.inputText.split(' ')
-      .filter((word) => word.length > 0)
-      .length;
+     let words = this.inputText.split(' ')
+      .filter((word) => word.length > 0);
+
+     this.nbWords = words.length;
   }
 
   onChanges() {
