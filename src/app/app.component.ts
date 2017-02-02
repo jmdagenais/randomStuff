@@ -15,9 +15,9 @@ export class AppComponent {
   wordsCount: any[];
 
   calculateStats() {
-    this.nbLines = this.inputText.split('/\r|\r\n|\n/').length;
+    this.nbLines = this.inputText.split(/\r|\r\n|\n/).length;
 
-    this.nbChar = this.inputText.length;
+    this.nbChar = this.inputText.replace(/\r|\r\n|\n/g, '').length;
 
     let onlyLetters: string = this.inputText.replace(/\W/g, '');
     onlyLetters = onlyLetters.replace(/\d/g, '');
@@ -26,7 +26,9 @@ export class AppComponent {
     let onlyDigits: string = this.inputText.replace(/\D/g, '');
     this.nbDigits = onlyDigits.length;
 
-    let words = this.inputText.split(' ')
+    let cleanInput = this.inputText.replace(/\r|\r\n|\n/g, ' ');
+
+    let words = cleanInput.split(' ')
       .filter((word) => word.length > 0);
 
     this.nbWords = words.length;
